@@ -11,7 +11,7 @@ on:
     
   # This runs it on a schedule (CRON syntax). Currently this runs every day at 2:46 PM
   schedule:
-  - cron: "52 14 * * *"
+  - cron: "53 14 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
