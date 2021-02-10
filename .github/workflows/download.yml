@@ -4,14 +4,13 @@ name: download
 
 # Controls when the action will run. 
 on:
-  # This runs it on a schedule (CRON syntax). Currently this runs every day at 2:46 PM
+  # This runs it on a schedule (CRON syntax). Currently this runs every day at 6 AM
   schedule:
-  - cron: "30 15 * * *"
+  - cron: "0 6 * * *"
   
   # Triggers the workflow on push or pull request events but only for the main branch
-  # Commenting out as we just want it to run on a schedule
-  # push:
-  #   branches: [ master ]
+  push:
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,6 +35,7 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add imperial_hotspot_projections.csv
+        git add metadata.csv
         git commit -m "Updated data" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
