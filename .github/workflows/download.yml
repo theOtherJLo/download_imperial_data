@@ -25,7 +25,7 @@ jobs:
         r-version: '4.0.2' # The R version to download (if necessary) and use.
     - name: download_imperial_data
       run: |
-        Rscript -e "setwd(list.dirs(recursive = FALSE)[1]); source('run.R');"
+        Rscript -e "source('run.R');"
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
