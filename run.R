@@ -6,4 +6,5 @@ data <- read.csv('https://imperialcollegelondon.github.io/covid19local/downloads
 # Save data ----------------------
 write.csv(data, file = "imperial_hotspot_projections.csv")
 
+message(file.exists("imperial_hotspot_projections.csv"))
 
