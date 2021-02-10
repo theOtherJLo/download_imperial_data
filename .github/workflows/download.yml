@@ -5,8 +5,13 @@ name: download
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ master ]
+  # Commenting out as we just want it to run on a schedule
+  # push:
+  #   branches: [ master ]
+    
+  # This runs it on a schedule (CRON syntax). Currently this runs every day at 2:46 PM
+  schedule:
+    - cron: "46 14 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
