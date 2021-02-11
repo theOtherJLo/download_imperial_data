@@ -1,0 +1,22 @@
+# Download Imperial data pipeline
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+container:
+  image: 'rocker/tidyverse:latest'
+
+steps:
+- bash: R -q -e 'source("run.R")'
+  displayName: "Download data"
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Data'
+  inputs:
+    pathToPublish: 'imperial_hotspot_projections.csv' 
+    artifactName: check 
+  condition: succeededOrFailed()
